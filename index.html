@@ -656,14 +656,15 @@
             if(input.length < 2) { showToast("Authentication Failed. Invalid ID.", 'error'); return; }
             studentStr = input;
             
-            document.getElementById('ui-name').innerText = studentStr.toUpperCase();
-            document.getElementById('welcome-student-name').innerText = studentStr;
-            document.getElementById('modal-student-name').innerText = studentStr.toUpperCase();
+            // Actualización segura
+            if(document.getElementById('ui-name')) document.getElementById('ui-name').innerText = studentStr.toUpperCase();
+            if(document.getElementById('welcome-student-name')) document.getElementById('welcome-student-name').innerText = studentStr;
+            if(document.getElementById('modal-student-name')) document.getElementById('modal-student-name').innerText = studentStr.toUpperCase();
 
+            // Desaparece la pantalla de login
             document.getElementById('gateway').style.opacity = '0';
             setTimeout(() => document.getElementById('gateway').style.display = 'none', 400);
             
-            // Init Voices early to prevent delay
             loadVoices();
         }
 
