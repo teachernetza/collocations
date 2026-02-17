@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>B2 Collocations Masterclass | Rators Club</title>
+    
+    <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w128">
+    <link rel="apple-touch-icon" href="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w512">
+    <meta name="theme-color" content="#0F172A">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* ==========================================================================
+           1. EXECUTIVE HUB THEME (CORPORATE DARK MODE)
+           ========================================================================== */
+        :root {
+            /* Backgrounds */
+            --bg-deep: #020617;        /* Slate 950 */
+            --bg-panel: #0F172A;       /* Slate 900 */
+            --bg-card: #1E293B;        /* Slate 800 */
+            
+            /* Accents */
+            --ax-cyan: #06B6D4;        /* Cyan 500 */
+            --ax-blue: #3B82F6;        /* Blue 500 */
+            --ax-indigo: #6366F1;      /* Indigo 500 */
+            --ax-emerald: #10B981;     /* Emerald 500 */
+            --ax-rose: #E11D48;        /* Rose 600 */
+            --ax-amber: #F59E0B;       /* Amber 500 */
+            
+            /* Typography */
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-dark: #020617;
+            
+            /* UI Physics */
+            --sidebar-width: 320px;
+            --border-subtle: 1px solid rgba(255, 255, 255, 0.08);
+            --border-glow: 1px solid rgba(6, 182, 212, 0.3);
+            --shadow-float: 0 20px 40px -10px rgba(0,0,0,0.8);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --trans-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.5px; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 10px; border: 2px solid var(--bg-deep); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ax-cyan); }
+
+        /* ==========================================================================
+           2. SECURITY GATEWAY (LOGIN)
+           ========================================================================== */
+        #gateway {
+            position: fixed; inset: 0; background: var(--bg-deep); z-index: 9999;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 2rem; text-align: center;
+            background-image: radial-gradient(circle at 50% -20%, rgba(37, 99, 235, 0.15), transparent 60%);
+        }
+        
+        .gateway-logo {
+            width: 130px; height: 130px; border-radius: 50%; padding: 3px;
+            background: linear-gradient(135deg, var(--ax-blue), var(--ax-cyan));
+            margin-bottom: 2rem; box-shadow: 0 0 40px rgba(6, 182, 212, 0.2);
+        }
+        .gateway-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg-deep); }
+        
+        .gateway-title { font-size: 3.2rem; font-weight: 900; color: #FFF; margin-bottom: 0.2rem; }
+        .gateway-sub { color: var(--ax-cyan); font-weight: 600; margin-bottom: 3rem; letter-spacing: 5px; font-size: 0.9rem; text-transform: uppercase; }
+        
+        .name-input {
+            width: 100%; max-width: 380px; padding: 22px; border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); text-align: center;
+            font-family: 'Outfit'; font-size: 1.2rem; font-weight: 600; color: var(--text-light);
+            transition: var(--trans-smooth); margin-bottom: 25px;
+        }
+        .name-input::placeholder { color: rgba(255,255,255,0.3); font-weight: 400; }
+        .name-input:focus { border-color: var(--ax-cyan); background: rgba(6, 182, 212, 0.05); box-shadow: 0 0 25px rgba(6, 182, 212, 0.1); }
+        
+        .btn-executive {
+            background: var(--text-light); color: var(--bg-deep);
+            padding: 18px 45px; border-radius: 50px; border: none; font-size: 1.1rem; font-weight: 800; font-family: 'Outfit';
+            cursor: pointer; letter-spacing: 1px; transition: 0.2s; width: 100%; max-width: 380px; text-transform: uppercase;
+        }
+        .btn-executive:hover { background: var(--ax-cyan); box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3); }
+
+        /* ==========================================================================
+           3. SIDEBAR NAVIGATION
+           ========================================================================== */
+        .sidebar {
+            width: var(--sidebar-width); height: 100vh; background: var(--bg-panel);
+            border-right: var(--border-subtle); position: fixed; top: 0; left: 0; z-index: 1000;
+            display: flex; flex-direction: column; transition: transform var(--trans-smooth);
+        }
+
+        .sidebar-header { padding: 2.5rem 1.5rem; text-align: center; border-bottom: var(--border-subtle); background: rgba(0,0,0,0.2); }
+        .rc-logo-mini { width: 70px; height: 70px; margin: 0 auto 1rem; border-radius: 18px; border: 2px solid rgba(255,255,255,0.1); overflow: hidden; }
+        .rc-logo-mini img { width: 100%; height: 100%; object-fit: cover; }
+        .rc-title { font-family: 'Outfit'; font-size: 1.3rem; font-weight: 800; color: var(--text-light); letter-spacing: 1px; }
+        .rc-subtitle { font-size: 0.8rem; color: var(--ax-cyan); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 5px; }
+
+        .nav-menu { padding: 1.5rem 1.2rem; flex: 1; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
+        .nav-link {
+            width: 100%; padding: 16px 20px; border-radius: 12px; background: transparent; border: 1px solid transparent;
+            color: var(--text-muted); text-align: left; font-size: 0.95rem; font-weight: 600; font-family: 'Inter';
+            cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 15px; position: relative; overflow: hidden;
+        }
+        .nav-link i { font-size: 1.2rem; width: 24px; text-align: center; transition: 0.2s; }
+        
+        .nav-link:hover { background: rgba(255,255,255,0.03); color: var(--text-light); }
+        .nav-link.active { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.3); color: var(--text-light); }
+        .nav-link.active i { color: var(--ax-cyan); }
+        .nav-link.active::before { content: ''; position: absolute; left: 0; top: 20%; height: 60%; width: 4px; background: var(--ax-cyan); border-radius: 0 4px 4px 0; }
+
+        /* ==========================================================================
+           4. MAIN CONTENT & RESPONSIVE
+           ========================================================================== */
+        .main-wrapper { margin-left: var(--sidebar-width); width: calc(100% - var(--sidebar-width)); min-height: 100vh; display: flex; flex-direction: column; transition: var(--trans-smooth); }
+        
+        .mobile-header { display: none; background: var(--bg-panel); padding: 15px 25px; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 900; border-bottom: var(--border-subtle); }
+        .mobile-brand { display: flex; align-items: center; gap: 12px; font-family: 'Outfit'; font-weight: 800; color: var(--text-light); font-size: 1.2rem; }
+        .mobile-brand img { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); object-fit: cover; }
+        .btn-menu { background: transparent; border: none; color: var(--text-light); font-size: 1.5rem; cursor: pointer; }
+
+        .content-container { padding: 4rem; max-width: 1000px; margin: 0 auto; width: 100%; flex: 1; }
+        .sidebar-overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.8); z-index: 999; display: none; opacity: 0; transition: 0.3s; backdrop-filter: blur(4px); }
+
+        @media (max-width: 1024px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+            .main-wrapper { margin-left: 0; width: 100%; }
+            .mobile-header { display: flex; }
+            .sidebar-overlay.active { display: block; opacity: 1; }
+            .content-container { padding: 2rem 1.5rem; }
+        }
+
+        /* ==========================================================================
+           5. EXECUTIVE CARDS & CONTENT STYLES
+           ========================================================================== */
+        .view-section { display: none; animation: fadeSlideUp 0.5s ease forwards; opacity: 0; transform: translateY(20px); }
+        .view-section.active { display: block; }
+        @keyframes fadeSlideUp { to { opacity: 1; transform: translateY(0); } }
+
+        .exec-card {
+            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-lg);
+            padding: 3.5rem; box-shadow: var(--shadow-float); margin-bottom: 2rem; position: relative;
+        }
+        /* Top Accent Line */
+        .exec-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--ax-blue), var(--ax-cyan)); }
+        
+        .header-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 30px; font-weight: 600; font-size: 0.85rem; margin-bottom: 1.5rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .hero-title { font-size: 3rem; margin-bottom: 1rem; font-weight: 900; line-height: 1.1; color: #FFF; }
+        .hero-subtitle { font-size: 1.2rem; color: var(--ax-cyan); margin-bottom: 2.5rem; font-weight: 500; }
+        
+        .master-text { font-size: 1.1rem; margin-bottom: 2rem; color: #CBD5E1; line-height: 1.8; }
+        
+        /* Pro-Tip Box */
+        .pro-tip { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--ax-blue); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+        .pro-tip h4 { color: var(--ax-blue); font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .pro-tip p { font-size: 0.95rem; color: var(--text-light); }
+
+        /* Context Box */
+        .context-box { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; margin-bottom: 2.5rem; }
+        .context-box h3 { font-size: 1.3rem; margin-bottom: 10px; color: #FFF; display: flex; align-items: center; gap: 10px; }
+        
+        /* Vocab Grid & Audio Buttons */
+        .vocab-grid { display: grid; gap: 15px; }
+        .vocab-item {
+            display: flex; align-items: flex-start; gap: 20px; background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; transition: 0.2s;
+        }
+        .vocab-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+        
+        .btn-audio {
+            width: 45px; height: 45px; border-radius: 50%; border: none; background: rgba(255,255,255,0.1);
+            color: var(--text-light); cursor: pointer; flex-shrink: 0; transition: 0.2s; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+        }
+        .btn-audio:hover { background: var(--ax-cyan); color: var(--bg-deep); }
+        .btn-audio:active { transform: scale(0.9); }
+        .btn-audio.playing { background: var(--ax-cyan); color: var(--bg-deep); animation: pulseAudio 1s infinite; }
+        @keyframes pulseAudio { 0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(6, 182, 212, 0); } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+        .v-phrase { font-family: 'Outfit'; font-size: 1.4rem; font-weight: 800; color: #FFF; margin-bottom: 5px; line-height: 1; }
+        .v-def { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 10px; }
+        .v-ex { background: rgba(0,0,0,0.5); padding: 10px 15px; border-radius: 8px; font-size: 0.95rem; font-style: italic; border-left: 2px solid var(--text-muted); }
+
+        /* ==========================================================================
+           6. INTERACTIVE LAB (SENTENCE BUILDER)
+           ========================================================================== */
+        .lab-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: var(--border-subtle); }
+        .level-badge { font-family: 'Outfit'; font-weight: 900; color: var(--text-light); font-size: 1.2rem; background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 8px; }
+        
+        .scenario-target { font-size: 1.2rem; color: var(--ax-cyan); font-weight: 600; text-align: center; margin-bottom: 20px; font-style: italic; }
+
+        .game-area { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; text-align: center; }
+
+        .answer-area { min-height: 90px; display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 12px; padding: 20px; border-bottom: 2px solid rgba(255,255,255,0.2); margin-bottom: 25px; background: rgba(255,255,255,0.02); border-radius: 12px 12px 0 0; }
+        .pool-area { min-height: 100px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 16px; margin-bottom: 30px; }
+        
+        .word-chip {
+            background: var(--bg-card); color: var(--text-light); border: 1px solid rgba(255,255,255,0.1);
+            padding: 14px 24px; border-radius: 10px; font-family: 'Inter'; font-weight: 600; font-size: 1.1rem;
+            cursor: pointer; transition: 0.2s; user-select: none; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .word-chip:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+        .word-chip:active { transform: scale(0.95); background: var(--text-light); color: var(--bg-deep); }
+
+        .teacher-feedback { display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 20px; border-radius: 12px; text-align: left; margin-top: 25px; animation: fadeSlideUp 0.4s; }
+        .feedback-title { color: var(--ax-emerald); font-family: 'Outfit'; font-weight: 800; font-size: 1.2rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+
+        /* ==========================================================================
+           7. EXAM ENGINE & TIMER
+           ========================================================================== */
+        .exam-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; background: rgba(0,0,0,0.3); padding: 20px 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+        .q-tracker { font-family: 'Outfit'; font-size: 1.3rem; font-weight: 800; color: var(--text-light); }
+        
+        .timer-display {
+            background: transparent; color: var(--text-light); font-family: monospace; font-size: 1.6rem;
+            font-weight: 700; display: inline-flex; align-items: center; gap: 10px;
+        }
+        .timer-display.danger { color: var(--ax-rose); animation: pulseRed 1s infinite; }
+        @keyframes pulseRed { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        .question-text { font-size: 1.5rem; font-weight: 600; color: #FFF; margin-bottom: 2.5rem; line-height: 1.5; font-family: 'Outfit'; text-align: center; }
+        
+        .options-container { display: flex; flex-direction: column; gap: 15px; margin-bottom: 3rem; }
+        .opt-card {
+            width: 100%; padding: 20px 25px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.02); color: var(--text-light); font-size: 1.15rem; font-family: 'Inter';
+            text-align: center; cursor: pointer; font-weight: 500; transition: 0.2s;
+        }
+        .opt-card:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
+        .opt-card.selected { border-color: var(--text-light); background: var(--text-light); color: var(--bg-deep); font-weight: 700; transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+
+        .correct { border-color: var(--ax-emerald) !important; background: var(--ax-emerald) !important; color: #FFF !important; font-weight: 700; }
+        .wrong { border-color: var(--ax-rose) !important; background: var(--ax-rose) !important; color: #FFF !important; animation: shakeError 0.4s; }
+        @keyframes shakeError { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(3px); } 30%, 50%, 70% { transform: translateX(-4px); } 40%, 60% { transform: translateX(4px); } }
+
+        /* ==========================================================================
+           8. MODALS & GLOBAL UTILS
+           ========================================================================== */
+        .overlay { position: fixed; inset: 0; background: rgba(2, 6, 23, 0.95); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(10px); }
+        .result-card { background: var(--bg-card); width: 100%; max-width: 500px; padding: 4rem 3rem; border-radius: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 25px 50px rgba(0,0,0,0.9); animation: zoomIn 0.4s ease; position: relative; }
+        @keyframes zoomIn { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+        
+        .score-display { width: 150px; height: 150px; border-radius: 50%; border: 8px solid var(--text-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 3.5rem; font-weight: 900; color: #FFF; font-family: 'Outfit'; background: var(--bg-deep); }
+        
+        #toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--text-light); color: var(--bg-deep); padding: 16px 30px; border-radius: 50px; font-weight: 700; font-size: 1rem; opacity: 0; transition: 0.3s; pointer-events: none; z-index: 9999; box-shadow: 0 15px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 10px; }
+        #toast.show { opacity: 1; transform: translateX(-50%) translateY(-15px); }
+
+        .btn-main { background: var(--text-light); color: var(--bg-deep); padding: 18px 40px; border-radius: 50px; border: none; font-size: 1.1rem; font-weight: 800; font-family: 'Outfit'; cursor: pointer; transition: 0.2s; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-main:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,255,255,0.2); }
+        .btn-main:disabled { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); cursor: not-allowed; }
+
+        .footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; margin-top: auto; border-top: var(--border-subtle); background: rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+    <div id="gateway">
+        <div class="gateway-logo"><img src="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w300" alt="Logo"></div>
+        <h1 class="gateway-title">The Executive Hub</h1>
+        <p class="gateway-sub">B2 Collocations Masterclass</p>
+        
+        <input type="text" id="student-input" class="name-input" placeholder="Enter Executive ID..." autocomplete="off">
+        <button class="btn-executive" onclick="initSystem()">Request Access</button>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="rc-logo-mini"><img src="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w200" alt="Logo"></div>
+            <div class="rc-title">RATORS CLUB</div>
+            <div class="rc-subtitle" id="ui-name">Executive</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <button class="nav-link active" onclick="navTo('sec-intro', this)"><i class="fas fa-home"></i> 1. Introduction</button>
+            <button class="nav-link" onclick="navTo('sec-adverb', this)"><i class="fas fa-podcast"></i> 2. Adverb + Adjective</button>
+            <button class="nav-link" onclick="navTo('sec-business', this)"><i class="fas fa-user-tie"></i> 3. Business English</button>
+            <button class="nav-link" onclick="navTo('sec-makedo', this)"><i class="fas fa-random"></i> 4. Make vs Do</button>
+            <button class="nav-link" onclick="navTo('sec-news', this)"><i class="fas fa-newspaper"></i> 5. Breaking News</button>
+            <button class="nav-link" onclick="navTo('sec-lab', this)"><i class="fas fa-hammer"></i> 6. The Simulator</button>
+            <button class="nav-link" onclick="navTo('sec-test', this)" style="color:var(--text-light); margin-top:10px; border:1px solid rgba(255,255,255,0.2);"><i class="fas fa-shield-alt"></i> 7. Certification</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button onclick="location.reload()" style="background:transparent; border:none; color:var(--text-muted); font-family:'Inter'; cursor:pointer;"><i class="fas fa-sign-out-alt"></i> Terminate Session</button>
+        </div>
+    </aside>
+
+    <main class="main-wrapper" id="main-content">
+        
+        <header class="mobile-header">
+            <div class="mobile-brand">
+                <img src="https://drive.google.com/thumbnail?id=1bOFY9XiVAv-WRQnVHXSnL5FHVEoK3UAp&sz=w64" alt="RC">
+                EXECUTIVE B2
+            </div>
+            <button class="btn-menu" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        </header>
+
+        <div class="content-container">
+
+            <section id="sec-intro" class="view-section active">
+                <div class="exec-card">
+                    <div class="header-badge">Level: Upper-Intermediate (B2)</div>
+                    <h1 class="hero-title">The Secret of Fluency</h1>
+                    <p class="hero-subtitle">What are Collocations?</p>
+                    
+                    <p class="master-text">
+                        Bienvenido al nivel donde el inglés deja de ser una traducción matemática y se convierte en arte. En el nivel B2, tu objetivo no es saber palabras aisladas, sino <strong>"Chunks" (Bloques de palabras)</strong>. A estos bloques naturales les llamamos <strong>Collocations</strong>.
+                    </p>
+
+                    <div class="pro-tip">
+                        <h4><i class="fas fa-lightbulb"></i> The Native Speaker Secret</h4>
+                        <p>A native speaker doesn't think: <em>"I need to create a decision."</em> They automatically think: <em>"I need to <strong>make a decision</strong>."</em> Traducir palabra por palabra te hará sonar robótico. Aprender "Collocations" te dará fluidez inmediata y precisión profesional.</p>
+                    </div>
+
+                    <div class="context-box" style="background:rgba(225, 29, 72, 0.05); border-color:rgba(225, 29, 72, 0.2);">
+                        <h3 style="color:var(--ax-rose);"><i class="fas fa-times-circle"></i> Stop saying this:</h3>
+                        <ul style="list-style:none; color:var(--text-light); font-size:1.05rem;">
+                            <li style="margin-bottom:8px;"><del style="color:var(--text-muted);">Do a mistake</del> <i class="fas fa-arrow-right" style="margin:0 10px; color:var(--text-muted);"></i> <strong>Make a mistake</strong></li>
+                            <li style="margin-bottom:8px;"><del style="color:var(--text-muted);">Very bad weather</del> <i class="fas fa-arrow-right" style="margin:0 10px; color:var(--text-muted);"></i> <strong>Severe weather</strong></li>
+                            <li><del style="color:var(--text-muted);">Put attention</del> <i class="fas fa-arrow-right" style="margin:0 10px; color:var(--text-muted);"></i> <strong>Pay attention</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-adverb" class="view-section">
+                <div class="exec-card">
+                    <div class="header-badge">Module 1</div>
+                    <h1 class="hero-title">The "Agony Aunt" Podcast</h1>
+                    <p class="hero-subtitle">Adverb + Adjective Collocations</p>
+
+                    <p class="master-text">
+                        En B2, está prohibido usar la palabra "Very" para todo. En la radio, la televisión o en terapia, usamos combinaciones específicas de Adverbios para darle drama y exactitud a nuestras emociones.
+                    </p>
+
+                    <div class="context-box">
+                        <h3><i class="fas fa-headphones"></i> Podcast Context: Giving Advice</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">Imagina que eres un locutor dando consejos a personas con problemas dramáticos. Escucha y repite estas frases clave.</p>
+                        
+                        <div class="vocab-grid">
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Bitterly disappointed')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Bitterly disappointed</div>
+                                    <div class="v-def">Amargamente decepcionado (Uso: Cuando alguien te falla profundamente).</div>
+                                    <div class="v-ex">"I know you are bitterly disappointed with your exam results, but you must keep studying."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Deeply concerned')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Deeply concerned</div>
+                                    <div class="v-def">Profundamente preocupado (Uso: Problemas de salud o seguridad).</div>
+                                    <div class="v-ex">"As a therapist, I am deeply concerned about your sleeping habits."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Perfectly normal')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Perfectly normal</div>
+                                    <div class="v-def">Completamente normal (Uso: Para calmar a alguien).</div>
+                                    <div class="v-ex">"Don't worry, feeling anxious before an interview is perfectly normal."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Highly unlikely')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Highly unlikely</div>
+                                    <div class="v-def">Altamente improbable (Uso: Para descartar un miedo absurdo).</div>
+                                    <div class="v-ex">"It is highly unlikely that your cat is plotting to kill you."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-business" class="view-section">
+                <div class="exec-card">
+                    <div class="header-badge">Module 2</div>
+                    <h1 class="hero-title">The Corporate Spy</h1>
+                    <p class="hero-subtitle">Business & Meeting Collocations</p>
+
+                    <p class="master-text">
+                        En el mundo corporativo, tu vocabulario define tu autoridad. Estas frases son esenciales para dominar una junta, cerrar un trato o intimidar a la competencia (Legalmente, claro).
+                    </p>
+
+                    <div class="context-box">
+                        <h3><i class="fas fa-briefcase"></i> Boardroom Context: Negotiations</h3>
+                        
+                        <div class="vocab-grid">
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Run a meeting')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Run a meeting</div>
+                                    <div class="v-def">Dirigir/Liderar una junta (No se dice "direct" ni "make").</div>
+                                    <div class="v-ex">"The CEO will run the meeting to discuss the new merger."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Close a deal')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Close a deal</div>
+                                    <div class="v-def">Cerrar un trato/negocio (Llegar a la firma final).</div>
+                                    <div class="v-ex">"We need to close the deal before Samsung steals our clients."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Bear in mind')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Bear in mind</div>
+                                    <div class="v-def">Tener en cuenta / Considerar (Súper formal).</div>
+                                    <div class="v-ex">"Please bear in mind that our budget is strictly limited this quarter."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Take over')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Take over</div>
+                                    <div class="v-def">Asumir el control / Comprar una empresa.</div>
+                                    <div class="v-ex">"Rumors say that Apple is planning to take over the small startup."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-makedo" class="view-section">
+                <div class="exec-card">
+                    <div class="header-badge">Module 3</div>
+                    <h1 class="hero-title">The Excuse Generator</h1>
+                    <p class="hero-subtitle">Make, Do, Take & Have</p>
+
+                    <p class="master-text">
+                        La trampa más grande del idioma inglés. En español, el verbo "Hacer" cubre casi todo. En inglés, debes elegir el arma correcta según la situación.
+                    </p>
+
+                    <div class="context-box">
+                        <h3><i class="fas fa-fire-extinguisher"></i> Office Context: Surviving a disaster</h3>
+                        
+                        <div class="vocab-grid">
+                            <div class="vocab-item" style="border-left: 4px solid var(--ax-emerald);">
+                                <button class="btn-audio" onclick="playAudio('Make an excuse')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">MAKE an excuse</div>
+                                    <div class="v-def">Inventar una excusa (Make = crear algo que no existía).</div>
+                                    <div class="v-ex">"He broke the printer, so he tried to make an excuse."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item" style="border-left: 4px solid var(--ax-blue);">
+                                <button class="btn-audio" onclick="playAudio('Do me a favor')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">DO me a favor</div>
+                                    <div class="v-def">Hacer un favor (Do = ejecutar una acción o deber).</div>
+                                    <div class="v-ex">"Could you do me a favor and clean up this mess?"</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item" style="border-left: 4px solid var(--ax-rose);">
+                                <button class="btn-audio" onclick="playAudio('Take responsibility')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">TAKE responsibility</div>
+                                    <div class="v-def">Asumir la responsabilidad (Take = agarrar/aceptar algo abstracto).</div>
+                                    <div class="v-ex">"As the manager, you must take responsibility for the failure."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item" style="border-left: 4px solid var(--ax-amber);">
+                                <button class="btn-audio" onclick="playAudio('Have a word with')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">HAVE a word with</div>
+                                    <div class="v-def">Hablar en privado / Regañar sutilmente.</div>
+                                    <div class="v-ex">"I need to have a word with you in my office right now."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-news" class="view-section">
+                <div class="exec-card">
+                    <div class="header-badge">Module 4</div>
+                    <h1 class="hero-title">The Fake News Broadcast</h1>
+                    <p class="hero-subtitle">Adjective + Noun (Journalism)</p>
+
+                    <p class="master-text">
+                        Para sonar como un presentador de la BBC o CNN, no puedes describir las cosas literalmente. Los periodistas usan adjetivos muy específicos para darle peso a la noticia.
+                    </p>
+
+                    <div class="context-box">
+                        <h3><i class="fas fa-satellite-dish"></i> Broadcast Context: Live Report</h3>
+                        
+                        <div class="vocab-grid">
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Heavy rain')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Heavy rain</div>
+                                    <div class="v-def">Lluvia fuerte (Nunca digas "strong rain").</div>
+                                    <div class="v-ex">"Flights were canceled due to heavy rain in the capital."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Catch fire')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Catch fire</div>
+                                    <div class="v-def">Incendiarse (La acción de empezar a arder).</div>
+                                    <div class="v-ex">"Breaking News: An electric car caught fire on the highway."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Strong accent')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Strong accent</div>
+                                    <div class="v-def">Acento marcado (Nunca digas "heavy accent").</div>
+                                    <div class="v-ex">"The suspect spoke English with a very strong Russian accent."</div>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <button class="btn-audio" onclick="playAudio('Keep a promise')"><i class="fas fa-play"></i></button>
+                                <div>
+                                    <div class="v-phrase">Keep a promise</div>
+                                    <div class="v-def">Cumplir una promesa (No se usa "do" ni "make").</div>
+                                    <div class="v-ex">"The President failed to keep his promise to lower taxes."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-lab" class="view-section">
+                <div class="exec-card">
+                    <div class="header-badge">Interactive Module</div>
+                    <h1 class="hero-title">The Simulator</h1>
+                    <p class="hero-subtitle">Syntax & Chunk Building</p>
+                    
+                    <p class="master-text">
+                        Conecta los fragmentos correctos basados en el contexto. Recuerda: No traduzcas palabra por palabra, busca el "bloque" lógico (The Collocation).
+                    </p>
+                    
+                    <div class="lab-header">
+                        <div style="font-weight:600; color:var(--text-muted); text-transform:uppercase;">Scenario</div>
+                        <div class="level-badge" id="game-lvl-display">Level 1 / 8</div>
+                    </div>
+
+                    <div class="scenario-target" id="scenario-text">"He promised to lower taxes, but he lied."</div>
+
+                    <div class="game-area" id="game-container">
+                        <div class="answer-area" id="answer-box"></div>
+                        <div class="pool-area" id="word-pool"></div>
+                        
+                        <button class="btn-executive" id="btn-check-game" style="margin:0 auto; display:block;" onclick="checkGameState()">EVALUATE STRUCTURE</button>
+                        
+                        <div class="teacher-feedback" id="game-feedback">
+                            <div class="feedback-title"><i class="fas fa-check-circle"></i> Perfect Chunk!</div>
+                            <div style="color:var(--ax-emerald); font-size:1.05rem;" id="feedback-desc">Explanation.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-test" class="view-section">
+                <div class="exec-card" id="test-intro-card">
+                    <div style="text-align:center; padding:3rem 0;">
+                        <i class="fas fa-id-card-alt" style="font-size:5rem; color:var(--text-light); margin-bottom:2rem;"></i>
+                        <h2 style="font-size:3rem; margin-bottom:1rem;">Executive Assessment</h2>
+                        <p style="color:var(--text-muted); margin-bottom:3rem; font-size:1.2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            15 Escenarios. 5 Minutos. Demuestra que posees el vocabulario corporativo y periodístico nivel B2.
+                        </p>
+                        
+                        <button class="btn-executive" style="max-width: 300px;" onclick="initiateTest()">START ASSESSMENT</button>
+                    </div>
+                </div>
+
+                <div class="exec-card" id="test-engine-card" style="display:none; padding:3rem;">
+                    <div class="exam-header-bar">
+                        <div class="q-tracker">Question <span id="q-counter" style="color:var(--ax-cyan);">1</span>/15</div>
+                        <div class="timer-display" id="clock-display"><i class="fas fa-stopwatch" style="color:var(--text-muted);"></i> 05:00</div>
+                    </div>
+
+                    <div class="question-text" id="question-render">Loading database...</div>
+
+                    <div class="options-container" id="options-render">
+                        </div>
+
+                    <button class="btn-main" id="btn-next-q" onclick="evaluateAndNext()" disabled style="width:100%; max-width:100%;">SUBMIT ANSWER</button>
+                </div>
+            </section>
+
+        </div> 
+        
+        <footer class="footer">
+            <div style="font-family:'Outfit'; font-weight:800; font-size:1.2rem; color:var(--text-light); margin-bottom:5px;">RATORS CLUB ACADEMY</div>
+            <p>B2 Executive English Lab &copy; 2026</p>
+        </footer>
+    </main>
+
+    <div id="toast"><i class="fas fa-bell"></i> <span id="toast-msg">Mensaje</span></div>
+
+    <div class="overlay" id="result-modal">
+        <div class="result-card">
+            <h2 style="font-size:2.2rem; font-family:'Outfit'; color:#FFF; margin-bottom:10px; text-transform:uppercase;">Assessment Report</h2>
+            <p style="font-size:1.1rem; font-weight:700; color:var(--ax-cyan); margin-bottom:2rem; letter-spacing:2px;" id="modal-student-name">EXECUTIVE</p>
+            
+            <div class="score-display" id="modal-score">100%</div>
+            
+            <p id="modal-feedback" style="font-size:1.1rem; color:var(--text-muted); margin-bottom:2.5rem; line-height: 1.6;">
+                Resultado de evaluación.
+            </p>
+            
+            <button class="btn-executive" onclick="location.reload()" style="max-width:100%;">RETURN TO BASE</button>
+        </div>
+    </div>
+
+    <script>
+        /* --- 1. SYSTEM INIT --- */
+        let studentStr = "Guest";
+
+        function showToast(msg, type = 'default') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.style.background = type === 'error' ? 'var(--ax-rose)' : 'var(--text-light)';
+            toast.style.color = type === 'error' ? '#FFF' : 'var(--bg-deep)';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        function initSystem() {
+            const input = document.getElementById('student-input').value.trim();
+            if(input.length < 2) { showToast("Authentication Failed. Invalid ID.", 'error'); return; }
+            studentStr = input;
+            
+            document.getElementById('ui-name').innerText = studentStr.toUpperCase();
+            document.getElementById('welcome-student-name').innerText = studentStr;
+            document.getElementById('modal-student-name').innerText = studentStr.toUpperCase();
+
+            document.getElementById('gateway').style.opacity = '0';
+            setTimeout(() => document.getElementById('gateway').style.display = 'none', 400);
+            
+            // Init Voices early to prevent delay
+            loadVoices();
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('active');
+        }
+
+        function navTo(tabId, btnRef) {
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            btnRef.classList.add('active');
+
+            document.querySelectorAll('.view-section').forEach(s => {
+                s.classList.remove('active'); s.style.animation = 'none';
+            });
+            
+            const target = document.getElementById(tabId);
+            target.classList.add('active');
+            void target.offsetWidth; 
+            target.style.animation = 'fadeSlideUp 0.5s ease forwards';
+
+            if(window.innerWidth <= 1024) toggleSidebar();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        /* --- 2. AUDIO ENGINE (TTS) --- */
+        const synth = window.speechSynthesis;
+        let engVoice = null;
+
+        function loadVoices() {
+            const voices = synth.getVoices();
+            engVoice = voices.find(v => v.lang.includes('en-US') && v.name.includes('Google')) || voices.find(v => v.lang.includes('en-GB')) || voices.find(v => v.lang.includes('en'));
+        }
+        if (speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+        function playAudio(word) {
+            if (synth.speaking) synth.cancel();
+            const btn = event.currentTarget;
+            const u = new SpeechSynthesisUtterance(word);
+            if (engVoice) u.voice = engVoice;
+            u.lang = 'en-US'; u.rate = 0.85; 
+            
+            u.onstart = () => {
+                document.querySelectorAll('.btn-audio').forEach(b => b.classList.remove('playing'));
+                if(btn) btn.classList.add('playing');
+            };
+            u.onend = () => { if(btn) btn.classList.remove('playing'); };
+            synth.speak(u);
+        }
+
+        /* --- 3. THE SIMULATOR (PRACTICE LAB) --- */
+        const labData = [
+            { s: "Context: He promised to lower taxes, but he lied.", w: ["He", "didn't", "keep", "his", "promise."], a: "He didn't keep his promise.", n: "Journalism Collocation: Keep a promise (Cumplir una promesa)." },
+            { s: "Context: You made a terrible mistake at work.", w: ["I", "will", "take", "responsibility", "for", "this."], a: "I will take responsibility for this.", n: "Corporate Collocation: Take responsibility (Asumir la culpa)." },
+            { s: "Context: The flight was canceled due to bad weather.", w: ["There", "was", "heavy", "rain", "yesterday."], a: "There was heavy rain yesterday.", n: "News Collocation: Heavy rain (Lluvia fuerte. Nunca digas strong rain)." },
+            { s: "Context: Someone deleted the company database.", w: ["He", "tried", "to", "make", "an", "excuse."], a: "He tried to make an excuse.", n: "Action Collocation: Make an excuse (Inventar una excusa)." },
+            { s: "Context: A therapist comforting an anxious patient.", w: ["It", "is", "perfectly", "normal", "to", "feel", "nervous."], a: "It is perfectly normal to feel nervous.", n: "Adverb+Adj: Perfectly normal (Completamente normal)." },
+            { s: "Context: The CEO needs someone to lead the presentation.", w: ["Who", "will", "run", "the", "meeting?"], a: "Who will run the meeting?", n: "Business Collocation: Run a meeting (Dirigir una junta)." },
+            { s: "Context: An electric car had an accident.", w: ["The", "car", "caught", "fire", "immediately."], a: "The car caught fire immediately.", n: "News Collocation: Catch fire (Incendiarse)." },
+            { s: "Context: You are very sad because you failed.", w: ["I", "was", "bitterly", "disappointed", "by", "the", "result."], a: "I was bitterly disappointed by the result.", n: "Adverb+Adj: Bitterly disappointed (Amargamente decepcionado)." }
+        ];
+
+        let labLvl = 0;
+
+        function loadLab() {
+            if(labLvl >= labData.length) {
+                document.getElementById('scenario-text').innerHTML = `Simulation Complete. Proceed to Certification.`;
+                document.getElementById('word-pool').innerHTML = '';
+                document.getElementById('answer-box').innerHTML = '';
+                document.getElementById('btn-check-game').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('game-lvl-display').innerText = `Scenario ${labLvl + 1}/${labData.length}`;
+            document.getElementById('scenario-text').innerText = labData[labLvl].s;
+            document.getElementById('game-feedback').style.display = 'none';
+            
+            const btn = document.getElementById('btn-check-game');
+            btn.innerText = "EVALUATE STRUCTURE";
+            btn.style.background = "var(--text-light)";
+            btn.style.color = "var(--bg-deep)";
+            btn.onclick = checkGameState;
+
+            const pool = document.getElementById('word-pool');
+            const ans = document.getElementById('answer-box');
+            pool.innerHTML = ''; ans.innerHTML = '';
+
+            let arr = [...labData[labLvl].w].sort(() => Math.random() - 0.5);
+
+            arr.forEach((word) => {
+                let chip = document.createElement('div');
+                chip.className = 'word-chip'; chip.innerText = word;
+                chip.onclick = () => {
+                    if(chip.parentElement === pool) ans.appendChild(chip);
+                    else pool.appendChild(chip);
+                };
+                pool.appendChild(chip);
+            });
+        }
+
+        function checkGameState() {
+            const chips = Array.from(document.getElementById('answer-box').querySelectorAll('.word-chip'));
+            const userStr = chips.map(c => c.innerText).join(' ');
+
+            if(userStr === labData[labLvl].a) {
+                document.getElementById('feedback-desc').innerText = labData[labLvl].n;
+                document.getElementById('game-feedback').style.display = 'block';
+                const btn = document.getElementById('btn-check-game');
+                btn.innerText = "LOAD NEXT SCENARIO";
+                btn.style.background = "var(--ax-emerald)";
+                btn.style.color = "white";
+                btn.onclick = () => { labLvl++; loadLab(); };
+            } else {
+                showToast("Syntax Error. Reorder the blocks.", "error");
+            }
+        }
+
+        /* --- 4. EXAM PROTOCOL (15 Qs) --- */
+        const examQs = [
+            { q: "I was _____ disappointed when I didn't get the job.", o: ["highly", "bitterly", "perfectly"], a: 1 },
+            { q: "The CEO is going to _____ the meeting tomorrow.", o: ["run", "make", "do"], a: 0 },
+            { q: "Please _____ in mind that this is strictly confidential.", o: ["keep", "take", "bear"], a: 2 },
+            { q: "Don't try to _____ an excuse. I know what you did.", o: ["do", "have", "make"], a: 2 },
+            { q: "Could you _____ me a favor and close the door?", o: ["make", "do", "take"], a: 1 },
+            { q: "Breaking News: A warehouse _____ fire last night.", o: ["caught", "took", "made"], a: 0 },
+            { q: "It is _____ unlikely that he will survive the fall.", o: ["deeply", "highly", "bitterly"], a: 1 },
+            { q: "We negotiated for hours and finally managed to _____ a deal.", o: ["make", "close", "run"], a: 1 },
+            { q: "He is difficult to understand because he has a _____ accent.", o: ["heavy", "strong", "hard"], a: 1 },
+            { q: "As the project leader, you must _____ responsibility for the delay.", o: ["take", "make", "do"], a: 0 },
+            { q: "The game was canceled due to _____ rain.", o: ["strong", "heavy", "big"], a: 1 },
+            { q: "The government is _____ concerned about the new virus.", o: ["deeply", "perfectly", "bitterly"], a: 0 },
+            { q: "I need to _____ a word with you in my office.", o: ["make", "take", "have"], a: 2 },
+            { q: "Don't panic. Feeling nervous before a presentation is _____ normal.", o: ["highly", "perfectly", "deeply"], a: 1 },
+            { q: "Our main objective this quarter is to _____ a profit.", o: ["do", "make", "take"], a: 1 } 
+        ];
+
+        let testState = { idx: 0, score: 0, picked: null, locked: false };
+        let clockInt; let timeRemaining = 300; 
+
+        function initiateTest() {
+            document.getElementById('test-intro-card').style.display = 'none';
+            document.getElementById('test-engine-card').style.display = 'block';
+            
+            testState = { idx: 0, score: 0, picked: null, locked: false };
+            timeRemaining = 300; updateClockUI();
+            
+            clockInt = setInterval(() => {
+                timeRemaining--; updateClockUI();
+                if(timeRemaining <= 0) { clearInterval(clockInt); endTest(); }
+            }, 1000);
+
+            renderTestQ();
+        }
+
+        function updateClockUI() {
+            const m = Math.floor(timeRemaining / 60); const s = timeRemaining % 60;
+            const disp = document.getElementById('clock-display');
+            disp.innerHTML = `<i class="fas fa-stopwatch" style="color:${timeRemaining<=60?'var(--ax-rose)':'var(--text-muted)'};"></i> 0${m}:${s < 10 ? '0' : ''}${s}`;
+            if(timeRemaining <= 60) disp.classList.add('danger');
+            else disp.classList.remove('danger');
+        }
+
+        function renderTestQ() {
+            const data = examQs[testState.idx];
+            const btn = document.getElementById('btn-next-q');
+            
+            testState.locked = false; testState.picked = null;
+            btn.disabled = true; btn.innerText = "SUBMIT ANSWER";
+            btn.style.background = "var(--text-light)"; btn.style.color = "var(--bg-deep)";
+
+            document.getElementById('q-counter').innerText = testState.idx + 1;
+            document.getElementById('question-render').innerText = `${testState.idx + 1}. ${data.q}`;
+
+            const optsBox = document.getElementById('options-render');
+            optsBox.innerHTML = '';
+            data.o.forEach((optText, i) => {
+                let optBtn = document.createElement('button');
+                optBtn.className = 'opt-card'; optBtn.innerText = optText;
+                optBtn.onclick = () => {
+                    if(testState.locked) return;
+                    document.querySelectorAll('.opt-card').forEach(b => b.classList.remove('selected'));
+                    optBtn.classList.add('selected'); testState.picked = i; btn.disabled = false;
+                };
+                optsBox.appendChild(optBtn);
+            });
+        }
+
+        function evaluateAndNext() {
+            if(!testState.locked) {
+                testState.locked = true;
+                const data = examQs[testState.idx];
+                const allOpts = document.querySelectorAll('.opt-card');
+                
+                if(testState.picked === data.a) {
+                    testState.score++;
+                    allOpts[testState.picked].classList.add('correct');
+                } else {
+                    allOpts[testState.picked].classList.add('wrong');
+                    allOpts[data.a].classList.add('correct');
+                }
+
+                const btn = document.getElementById('btn-next-q');
+                btn.innerText = (testState.idx === examQs.length - 1) ? "GENERATE REPORT" : "PROCEED TO NEXT";
+                btn.style.background = "var(--bg-card)";
+                btn.style.color = "var(--text-light)";
+                btn.style.border = "1px solid var(--text-light)";
+            } else {
+                testState.idx++;
+                if(testState.idx < examQs.length) renderTestQ(); else endTest();
+            }
+        }
+
+        function endTest() {
+            clearInterval(clockInt);
+            const pct = Math.round((testState.score / examQs.length) * 100);
+            const circle = document.getElementById('modal-score');
+            const feedback = document.getElementById('modal-feedback');
+            
+            circle.innerText = `${pct}%`;
+
+            if(pct >= 80) {
+                circle.style.borderColor = "var(--ax-emerald)";
+                circle.style.boxShadow = "0 0 40px rgba(16, 185, 129, 0.4)";
+                feedback.innerHTML = `<strong>Outstanding Performance.</strong> Aprobaste con ${testState.score}/15. Tu vocabulario es fluido, nativo y apto para entornos corporativos o periodísticos internacionales.`;
+                confetti({ particleCount: 250, spread: 110, origin: { y: 0.5 }, colors: ['#06B6D4', '#3B82F6', '#10B981'] });
+            } else {
+                circle.style.borderColor = "var(--ax-rose)";
+                circle.style.boxShadow = "0 0 40px rgba(225, 29, 72, 0.4)";
+                feedback.innerHTML = `Assessment Failed (${testState.score}/15). Todavía estás traduciendo palabra por palabra. Necesitas memorizar las collocations como bloques únicos.`;
+            }
+
+            document.getElementById('result-modal').style.display = 'flex';
+        }
+
+        window.onload = loadLab;
+    </script>
+</body>
+</html>
